@@ -133,5 +133,15 @@ output application/json
             </ee:message>
         </ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="96f8c9cf-cfb2-4b1b-aac5-3d3cfc122793" message="payload ----&gt; #[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="adc4ae53-e508-43ed-bf78-64ddb8abf1d4" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="3d2dbe73-80e8-48e5-a35f-ad5cae669e2d" message="the message recived succesfully #[payload]"/>
     </flow>
 </mule>
